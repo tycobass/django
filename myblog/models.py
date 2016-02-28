@@ -18,29 +18,13 @@ class Post(models.Model):
 class Category(models.Model):
     name = models.CharField(max_length=128)
     description = models.TextField(blank=True)
-    posts = models.ManyToManyField(
+    posts = models.ManyToManyField(  #<== magic attribute to deal with multiple fields
         Post,
         blank=True,
         related_name='categories'
     )
-    class Meta: #<== added esv
+    class Meta: #<== added esv to fix plurals problem with Categorys
         verbose_name_plural = "categories"  #<== added esv
 
     def __str__(self):
         return self.name
-
-# class CategoryInline(admin.TabularInline):
-#     model = Category
-
-# class PostAdmin(admin.ModelAdmin):
-#     inlines = [
-#         CategoryInline,
-#     ]
-
-class PostInline(admin.TabularInline):
-    model = Post
-
-class CategoryAdmin(admin.ModelAdmin):
-    inlines = [
-        PostInline,
-    ]
