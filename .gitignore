@@ -15,7 +15,7 @@
 */debris
 
 #python caching
-.pycache
+__pycache__
 
 
 .svn
