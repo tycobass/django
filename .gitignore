@@ -14,7 +14,8 @@
 #directories
 */debris
 
-
+#python caching
+.pycache
 
 
 .svn
