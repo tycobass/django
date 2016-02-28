@@ -15,7 +15,7 @@
 */debris
 
 #python caching
-.pyc
+*.pyc
 
 
 .svn
