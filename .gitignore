@@ -16,6 +16,7 @@
 
 #python caching
 *.pyc
+*.__pycache__
 
 
 .svn
