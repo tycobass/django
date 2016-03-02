@@ -8,15 +8,32 @@
     <h2>
       <a href="{% url 'blog_detail' post.pk %}">{{ post }}</a>
     </h2>
-    <p class="byline">
-      Posted by {{ post.author_name }} &mdash; {{ post.published_date }}
-    </p>
+
+      <table>
+        <colgroup>
+        <col span="1" width="100" align="left" />
+        <col span="3" width="250" align="left" />
+        </colgroup>
+          <tr>
+            <td>author:</td>
+            <td>created date:</td>
+            <td>published date:</td>
+            <td>modified date:</td>
+          </tr>
+          <tr>
+            <td>{{ post.author }}</th>
+            <td>{{ post.created_date }}</th>
+            <td>{{ post.published_date }}</th>
+            <td>{{ post.modified_date }}</th>
+          </tr>
+      </table>
+
     <div class="post-body">
-      {{ post.text }}
+      text:  {{ post.text }}
     </div>
     <ul class="categories">
       {% for category in post.categories.all %}
-        <li>{{ category }}</li>
+        <li>category(s): {{ category }}</li>
       {% endfor %}
     </ul>
   </div>
